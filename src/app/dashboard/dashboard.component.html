@@ -1,0 +1,58 @@
+<div class="container">
+<button class="btn btn-secondary" (click)="adding()">addemploye</button>
+    <table class="table">
+      <thead>
+        <th>firstname</th>
+        <th>password</th>
+      </thead>
+      <tr *ngFor="let x of arr; let in= index">
+        <td>{{x.studentname}}</td>
+        <td>{{x.password}}</td>
+        <td><button class="btn btn-danger" (click)="remove(x,in)">delete</button></td>
+        <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">
+                Edit
+              </button>
+              
+              <!-- The Modal -->
+              <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+              
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">editing employe</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+              
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <form #ref="ngForm" (ngSubmit)="edit(ref.value)" >
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Firstname" id="a" name="firstname" ngModel>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" id="b" name="email" ngModel>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Password" id="c" name="password" ngModel >
+                        </div>
+                        <div class="form-group">
+                            <input type="date" class="form-control" placeholder="CofirmPassword" id="d" name="confirm" ngModel>
+                        </div>
+                        <div class="text-center">
+                          <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                        </form>
+                    </div>
+              
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+              
+                  </div>
+                </div>
+              </div></td>
+      </tr>
+    </table>
+    </div>

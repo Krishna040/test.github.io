@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="text-center text-secondary">Login</h2>
+    <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+    <form #ref="ngForm" (ngSubmit)="call(ref.value)">
+    <div class="form-group">
+        <input type="text" placeholder="Enteryour email" name="username" class="form-control" ngModel>
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="Password" name="password" class="form-control" ngModel>
+    </div>
+<div class="text-center">
+    <button class="btn btn-success" type="submit">submit</button>
+</div>
+</form>
+</div>
+<div class="col-sm-3"></div>
+</div>
+</div>
+
+
+<router-outlet></router-outlet>
